@@ -1,0 +1,12 @@
+services:
+  app:
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    build:
+      context: .
+    command: ["yarn", "start"]
+    ports:
+      - 3001:3000
